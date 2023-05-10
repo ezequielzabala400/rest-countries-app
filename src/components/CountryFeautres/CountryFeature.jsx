@@ -58,7 +58,7 @@ const CountryFeatures = () => {
                     BorderCountries:
                 </BorderCountriesTitle>
                 <div>
-                    {countryInfo[0].borders.map(country => (<BorderCountriesBtn key={country} isToggle={isToggle}>{country}</BorderCountriesBtn>))}
+                    {countryInfo[0].borders.map(country => (<BorderCountriesBtn key={country} toggle={isToggle ? isToggle : undefined}>{country}</BorderCountriesBtn>))}
                 </div>
             </BorderCountries>
             </FeaturesWrapper>
