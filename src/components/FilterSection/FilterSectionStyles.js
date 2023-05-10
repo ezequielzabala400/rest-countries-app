@@ -25,12 +25,12 @@ export const SearchCountryInput = styled.input`
     width: 100%;
     padding: 16px 40px;
     border-radius: 10px;
-    background-color: ${({isToggle}) => isToggle ? 'var(--DarkBlue)' : 'var(--White)'};
-    color: ${({isToggle}) => isToggle ? 'var(--White)' : 'black'};
-    box-shadow: 4px 4px 12px ${({isToggle}) => isToggle ? 'var(--DarkBlue)' : 'var(--DarkGray)'};
+    background-color: ${({toggle}) => toggle ? 'var(--DarkBlue)' : 'var(--White)'};
+    color: ${({toggle}) => toggle ? 'var(--White)' : 'black'};
+    box-shadow: 4px 4px 12px ${({toggle}) => toggle ? 'var(--DarkBlue)' : 'var(--DarkGray)'};
     border: none;
     ::placeholder{
-        color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkGray)'};
+        color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkGray)'};
     }
 `
 
@@ -49,9 +49,9 @@ export const FilterRegion = styled.select`
     border-radius: 10px;
     cursor: pointer;
     border: none;
-    background-color: ${({isToggle}) => isToggle ? 'var(--DarkBlue)' : 'var(--White)'};
-    color: ${({isToggle}) => isToggle ? 'var(--White)' : 'black'};
-    box-shadow: 4px 4px 12px ${({isToggle}) => isToggle ? 'var(--DarkBlue)' : 'var(--DarkGray)'};
+    background-color: ${({toggle}) => toggle ? 'var(--DarkBlue)' : 'var(--White)'};
+    color: ${({toggle}) => toggle ? 'var(--White)' : 'black'};
+    box-shadow: 4px 4px 12px ${({toggle}) => toggle ? 'var(--DarkBlue)' : 'var(--DarkGray)'};
     @media (min-width: 768px) {
         margin-top: 0;
     }

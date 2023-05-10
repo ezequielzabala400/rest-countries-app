@@ -19,10 +19,10 @@ const CountryFeatures = () => {
     const countryInfo = useSelector(state => state.country.country);
 
   return (
-    <CountryFeaturesContainer isToggle={isToggle}>
-        <CountryFeaturesWrapper isToggle={isToggle}>
+    <CountryFeaturesContainer toggle={isToggle}>
+        <CountryFeaturesWrapper toggle={isToggle}>
         
-            <BackBtn isToggle={isToggle}>
+            <BackBtn toggle={isToggle}>
             <ArrowIcon>
                 <FaArrowLeft />
             </ArrowIcon>
@@ -35,7 +35,7 @@ const CountryFeatures = () => {
             </CountryFlag>
 
             <FeaturesWrapper>
-            <CountryData isToggle={isToggle}>
+            <CountryData toggle={isToggle}>
                 <h2>{countryInfo[0].name.common}</h2>
                 <div>
                     <div>
@@ -54,7 +54,7 @@ const CountryFeatures = () => {
             </CountryData>
 
             <BorderCountries>
-                <BorderCountriesTitle isToggle={isToggle}>
+                <BorderCountriesTitle toggle={isToggle}>
                     BorderCountries:
                 </BorderCountriesTitle>
                 <div>

@@ -8,17 +8,17 @@ export const NavbarWrapper = styled.nav`
     justify-content: space-between;
     align-items: center;
     margin: auto;
-    background-color: ${({isToggle}) => isToggle ? 'var(--DarkBlue)' : 'white'};
+    background-color: ${({toggle}) => toggle ? 'var(--DarkBlue)' : 'white'};
+`
 
-    h2{
+export const NavbarTitle = styled.h2`
         font-weight: 800;
         font-size: 1.3rem;
-        color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(----DarkBlue)'};
+        color: ${({toggle}) => toggle ? 'var(--White)' : 'var(----DarkBlue)'};
 
         @media (min-width: 768px) {
             font-size: 1.8rem;
         }
-    }
 `
 
 export const ToggleDarkModeContainer = styled.div`
@@ -27,7 +27,7 @@ export const ToggleDarkModeContainer = styled.div`
     gap: 10px;
     font-size: 1.1rem;
     font-weight: 600;
-    color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(----DarkBlue)'};
+    color: ${({toggle}) => toggle ? 'var(--White)' : 'var(----DarkBlue)'};
     cursor: pointer;
     @media (min-width: 768px) {
             font-size: 1.5rem;

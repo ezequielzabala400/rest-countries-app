@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const CountryFeaturesContainer = styled.div`
     width: 100%;
     height: calc(100vh - 70px);
-    background-color: ${({isToggle}) => isToggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
+    background-color: ${({toggle}) => toggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
 `
 
 export const CountryFeaturesWrapper = styled.div`
@@ -17,7 +17,7 @@ export const CountryFeaturesWrapper = styled.div`
     max-width: 500px;
     padding-top: 90px;
     margin: auto;
-    background-color: ${({isToggle}) => isToggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
+    background-color: ${({toggle}) => toggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
     @media (min-width: 768px) {
         max-width: 1200px;
     }
@@ -26,11 +26,11 @@ export const CountryFeaturesWrapper = styled.div`
 export const BackBtn = styled.div`
     position: relative;
     align-self: self-start;
-    box-shadow: 4px 4px 12px ${({isToggle}) => isToggle ? 'black' : 'var(--DarkGray)'};
-    color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkBlue)'};
+    box-shadow: 4px 4px 12px ${({toggle}) => toggle ? 'black' : 'var(--DarkGray)'};
+    color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkBlue)'};
     button{
-        color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkBlue)'};
-        background-color: ${({isToggle}) => isToggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
+        color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkBlue)'};
+        background-color: ${({toggle}) => toggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
         padding: 10px;
         width: 120px;
         border: none;
@@ -84,7 +84,7 @@ export const CountryData = styled.div`
     justify-content: start;
     align-items: start;
     gap: 20px;
-    color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkBlue)'};
+    color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkBlue)'};
     @media (min-width: 768px) {
     }
 
@@ -115,7 +115,7 @@ export const CountryData = styled.div`
 
 export const BorderCountriesTitle = styled.h2`
 font-size: 2rem;
-        color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkBlue)'};
+        color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkBlue)'};
 `
 
 export const BorderCountries = styled.div`
@@ -138,7 +138,7 @@ export const BorderCountriesBtn = styled.button`
             width: 120px;
             height: 40px;
             border: none;
-            box-shadow: 4px 4px 12px ${({isToggle}) => isToggle ? 'black' : 'var(--DarkGray)'};
-            color: ${({isToggle}) => isToggle ? 'var(--White)' : 'var(--DarkBlue)'};
-            background-color: ${({isToggle}) => isToggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
+            box-shadow: 4px 4px 12px ${({toggle}) => toggle ? 'black' : 'var(--DarkGray)'};
+            color: ${({toggle}) => toggle ? 'var(--White)' : 'var(--DarkBlue)'};
+            background-color: ${({toggle}) => toggle ? 'var(--VeryDarkBlue)' : 'var(--White)'};
 `
