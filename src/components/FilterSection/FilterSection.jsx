@@ -20,7 +20,7 @@ const FilterSection = () => {
                 navigate(`/country/${country}`)
             }}>
                 <SearchCountryInput 
-                toggle={isToggle}
+                toggle={isToggle ? isToggle : undefined}
                 placeholder="Search for a country..."
                 onChange={(e) => setCountry(e.target.value)}
                 />
@@ -30,7 +30,7 @@ const FilterSection = () => {
             </InputSearchCountryContainer>
 
             <FilterRegion 
-            toggle={isToggle}
+            toggle={isToggle ? isToggle : undefined}
             onChange={(e) => dispatch(searchRegion(e.target.value))}>
                 <option>Filter by Region</option>
                 <option value="Africa">Africa</option>

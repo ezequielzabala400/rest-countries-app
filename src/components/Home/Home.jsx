@@ -9,7 +9,7 @@ const Home = () => {
   const isToggle = useSelector(state => state.darkMode.darkMode)
 
   return (
-    <HomeWrapper toggle={isToggle}>
+    <HomeWrapper toggle={isToggle ? isToggle : undefined}>
         <FilterSection />
         <Countries />
         <ScrollTopBtn />

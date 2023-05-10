@@ -9,10 +9,10 @@ const Navbar = () => {
   const dispatch = useDispatch()
 
   return (
-    <NavbarWrapper toggle={isToggle}>
-        <NavbarTitle toggle={isToggle}>Where in the world?</NavbarTitle>
+    <NavbarWrapper toggle={isToggle ? isToggle : undefined}>
+        <NavbarTitle toggle={isToggle ? isToggle : undefined}>Where in the world?</NavbarTitle>
         <ToggleDarkModeContainer 
-        toggle={isToggle}
+        toggle={isToggle ? isToggle : undefined}
         onClick={() => dispatch(toggleDarkMode())}>
             <FaRegMoon />
             <p>Dark Mode</p>

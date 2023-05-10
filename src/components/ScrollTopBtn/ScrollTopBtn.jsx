@@ -7,7 +7,7 @@ const ScrollTopBtn = () => {
 
   return (
     <ScrollBtn 
-    toggle= {isToggle}
+    toggle= {isToggle ? isToggle : undefined}
     onClick={() => {window.scrollTo(0,0)}}>↕</ScrollBtn>
   )
 }
