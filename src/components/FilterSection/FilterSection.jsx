@@ -17,6 +17,7 @@ const FilterSection = () => {
         <InputsWrapper>
             <InputSearchCountryContainer onSubmit={(e) => {
                 e.preventDefault()
+                if(country === '') return;
                 navigate(`/country/${country}`)
             }}>
                 <SearchCountryInput 

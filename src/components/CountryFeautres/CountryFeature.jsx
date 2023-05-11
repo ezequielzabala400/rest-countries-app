@@ -1,10 +1,12 @@
 import { ArrowIcon, BackBtn, BorderCountries, BorderCountriesBtn, BorderCountriesTitle, CountryContainer, CountryData, CountryFeaturesContainer, CountryFeaturesWrapper, CountryFlag, FeaturesWrapper } from "./CountryFeatureStyles"
 import {FaArrowLeft} from 'react-icons/fa'
 import {useParams} from 'react-router-dom'
-import {useEffect} from 'react'
+import {useEffect, useState} from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { searchCountry } from "../../data/countriesData"
 import {useNavigate} from 'react-router-dom'
+import Progress from "../Progress/Progress"
+import { resetData } from "../../redux/slices/Country"
 const CountryFeatures = () => {
 
     const isToggle = useSelector(state => state.darkMode.darkMode);
@@ -12,7 +14,9 @@ const CountryFeatures = () => {
     const data = useParams();
     const navigate = useNavigate();
 
+
     useEffect(() => {
+        dispatch(resetData())
         dispatch(searchCountry(data.name))
     } ,[])
     
@@ -63,7 +67,7 @@ const CountryFeatures = () => {
             </BorderCountries>
             </FeaturesWrapper>
         </CountryContainer>
-        </> : <h2>Cargando</h2>}
+        </> : <Progress />}
     </CountryFeaturesWrapper>
     </CountryFeaturesContainer>
   )

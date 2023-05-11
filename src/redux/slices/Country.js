@@ -9,12 +9,18 @@ const initialState = {
 const CountrySlice = createSlice({
     name: 'country',
     initialState,
-    reducers: {},
+    reducers: {
+        resetData: (state) => {
+            return{...state, country: null};
+        }
+    },
     extraReducers(builder) {
         builder.addCase(searchCountry.fulfilled, (state,action) => {
             state.country = action.payload
         })
     },
 })
+
+export const {resetData} = CountrySlice.actions
 
 export const CountryReducer = CountrySlice.reducer
