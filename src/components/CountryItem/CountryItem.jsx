@@ -1,5 +1,6 @@
 import { CountryItemContainer, CountryItemFeatures, CountryItemImg, CountryItemTitle } from "../Countries/CountriesStyles"
 import {useSelector} from 'react-redux'
+import { formatNumber } from "../../utils/formatNumber";
 const CountryItem = ({name, capital, region, population, flags}) => {
   
     const isToggle = useSelector(state => state.darkMode.darkMode);
@@ -13,7 +14,7 @@ const CountryItem = ({name, capital, region, population, flags}) => {
         <CountryItemTitle toggle={isToggle ? isToggle : undefined}>{name.common}</CountryItemTitle>
 
         <CountryItemFeatures toggle={isToggle ? isToggle : undefined}>
-            <p><span>Population:</span> {population}</p>
+            <p><span>Population:</span> {formatNumber(population)}</p>
             <p><span>Region:</span> {region}</p>
             <p><span>Capital:</span> {capital}</p>
         </CountryItemFeatures>

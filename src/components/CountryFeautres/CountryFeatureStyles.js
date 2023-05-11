@@ -64,6 +64,7 @@ export const CountryFlag = styled.div`
     img{
         width: 100%;
         height: 260px;
+        box-shadow: 4px 4px 12px ${({toggle}) => toggle ? 'var(--DarkGray)' : 'black'};
         @media (min-width: 768px) {
             max-width: 460px;
         }

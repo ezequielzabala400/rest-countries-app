@@ -7,6 +7,8 @@ import { searchCountry } from "../../data/countriesData"
 import {useNavigate} from 'react-router-dom'
 import Progress from "../Progress/Progress"
 import { resetData } from "../../redux/slices/Country"
+import { formatLanguages, formatNumber } from "../../utils/formatNumber";
+
 const CountryFeatures = () => {
 
     const isToggle = useSelector(state => state.darkMode.darkMode);
@@ -35,7 +37,7 @@ const CountryFeatures = () => {
         {countryInfo ? <>
         <CountryContainer>
             <CountryFlag>
-                <img src={countryInfo[0].flags.svg} alt="" />
+                <img src={countryInfo[0].flags.svg} alt="country-flag" />
             </CountryFlag>
 
             <FeaturesWrapper>
@@ -44,7 +46,7 @@ const CountryFeatures = () => {
                 <div>
                     <div>
                         <p><span>Native Name:</span> {Object.values(countryInfo[0].name.nativeName)[0].official}</p>
-                        <p><span>Population:</span> {countryInfo[0].population}</p>
+                        <p><span>Population:</span> {formatNumber(countryInfo[0].population)}</p>
                         <p><span>Region:</span> {countryInfo[0].region}</p>
                         <p><span>Sub Region:</span> {countryInfo[0].subregion}</p>
                         <p><span>Capital:</span> {countryInfo[0].capital}</p>
@@ -52,7 +54,7 @@ const CountryFeatures = () => {
                     <div>
                         <p><span>Top Level Domain:</span> {countryInfo[0].tld}</p>
                         <p><span>Currencies:</span> {Object.entries(countryInfo[0].currencies)[0][1].name}</p>
-                        <p><span>Languages:</span> {Object.values(countryInfo[0].languages)}</p>
+                        <p><span>Languages:</span> {formatLanguages(Object.values(countryInfo[0].languages))}</p>
                     </div>
                 </div>
             </CountryData>
@@ -62,7 +64,7 @@ const CountryFeatures = () => {
                     BorderCountries:
                 </BorderCountriesTitle>
                 <div>
-                    {countryInfo[0].borders.map(country => (<BorderCountriesBtn key={country} toggle={isToggle ? isToggle : undefined}>{country}</BorderCountriesBtn>))}
+                    {countryInfo[0].borders?.map(country => (<BorderCountriesBtn key={country} toggle={isToggle ? isToggle : undefined}>{country}</BorderCountriesBtn>))}
                 </div>
             </BorderCountries>
             </FeaturesWrapper>
